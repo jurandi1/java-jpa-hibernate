@@ -23,10 +23,12 @@ public class CadastroDeProduto {
         em.persist(celulares); // De transient para Managed
         celulares.setNome("JURA");
         
-        em.getTransaction().commit();
-        em.close(); // Fechando o EntityManager
+        em.flush();
+        em.clear();
         
-        celulares.setNome("1234");  // Qualquer alteração após o close é ignorada. 
+        celulares = em.merge(celulares); //De Detached para Managed
+        celulares.setNome("1234");  
+        em.flush();
 	}
 
 }

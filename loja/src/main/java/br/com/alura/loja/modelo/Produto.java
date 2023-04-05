@@ -25,6 +25,9 @@ public class Produto {
 	@ManyToOne // MuitosParaUm = muitos produtos para uma categoria.
 	private Categoria categoria;
 	
+	public Produto() {
+	}
+	
 	public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
 		this.nome = nome;
 		this.descricao = descricao;
