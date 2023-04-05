@@ -29,6 +29,8 @@ public class CadastroDeProduto {
         celulares = em.merge(celulares); //De Detached para Managed
         celulares.setNome("1234");  
         em.flush();
+        em.remove(celulares);
+        em.flush();
 	}
 
 }
