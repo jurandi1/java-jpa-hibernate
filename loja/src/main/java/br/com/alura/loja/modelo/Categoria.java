@@ -1,5 +1,6 @@
 package br.com.alura.loja.modelo;
 
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -7,6 +8,7 @@ import javax.persistence.Table;
 @Table(name = "categorias")
 public class Categoria {
 
+	@EmbeddedId
 	private CategoriaId id;
 	
 	public Categoria() {
